@@ -1,0 +1,250 @@
+ *{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ }
+
+  body *{
+    font-family: 'Roboto' sans-serif;
+  }
+
+ body{
+  background-color: #6b5891;
+ }
+
+ #app * {
+   
+ }
+
+ #app{
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-areas: 
+  'A B'
+  'A C';
+  
+  gap: 48px;
+  place-content: center;
+  height: 100vh;
+ }
+ /*Player-1*/
+ #Player-1{
+  grid-area: A;
+  padding: 50px 40px;
+
+ }
+
+ #player-1 img{
+   width: 190px;
+   height: 190px;
+   object-fit: cover;
+   border-radius: 6px;
+ }
+
+ #Player-1 .wrapper{
+  width: 190px;
+}
+
+ #Player-1 .info{
+   margin-top: 28px;
+ }
+ /*Player-2*/
+ #Player-2{
+  grid-area: B;
+  height: fit-content;
+ }
+/*Player-3*/
+ #Player-3{
+  grid-area: C;
+   height: fit-content;
+  
+ }
+
+ .Player{
+   background-color: #21133d;
+   padding: 28px;
+   border-radius: 10px;
+}
+.Player img{
+  width: 84px;
+   height: 84px;
+   object-fit: cover;
+   border-radius: 6px;
+}
+ .info-wrapper{
+   display: flex;
+   align-items: center;
+   gap: 28px;
+ }
+
+ .info{
+   color: #4181a7;
+   }
+
+ .Info h1{
+  font-size: 24px;
+  margin-bottom: 9.6px;
+  }
+
+ .Info p{
+  opacity: 0.67;
+  font-size: 19px;
+ }
+
+ .controls{
+   display: flex;
+   justify-content: space-between;
+   margin-top: 28px;
+ }
+
+ .track{
+   margin-top: 28px;
+   position: relative;
+ }
+ 
+ .track::before{
+   content: '';
+   height: 6px;
+   width: 100%;
+   display: block;
+   background-color: #d84315;
+   opacity: 0.5;
+   border-radius: 10px;
+
+   position: absolute;
+ }
+
+  .track::after{
+    content: '';
+   height: 6px;
+   width: 80%;
+   display: block;
+   background-color: #d84315;
+  }
+   .time{
+   font-size: 14px;
+   color: #b5b5d1;
+   opacity: 0.7;
+   display: flex;
+   justify-content: space-between;
+   margin-top: 9.6px;
+ }
+ .modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 450px;
+  padding: 1.3rem;
+  min-height: 250px;
+  position: absolute;
+  top: 20%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+
+.modal .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal input {
+  padding: 0.7rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+.modal p {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 0.4rem 0 0.2rem;
+}
+
+button {
+  cursor: pointer;
+  justify-content: center;
+  
+  border: none;
+  font-weight: 600;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  font-weight: 500;
+  background-color: #4181a7;
+  color: rgb(19, 12, 12);
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1em;
+}
+
+.btn-open {
+  position: center;
+  
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+
+.btn-close {
+  transform: translate(10px, -20px);
+  padding: 0.5rem 0.7rem;
+  background: rgb(102, 43, 43);
+  border-radius: 50%;
+}
+overlay {
+  position: center;
+  
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  
+  
+}
+.modal {
+  z-index: 2;
+}
+.hidden {
+  display: none;
+  justify-content: center;
+}
+
+/* Adicionando animação de pulsação aos jogadores */
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+#Player-1,
+#Player-2,
+#Player-3 {
+  animation: pulse 2s infinite;
+  transition: transform 0.2s ease-in-out;
+}
+
+#Player-1:hover,
+#Player-2:hover,
+#Player-3:hover {
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+ 
